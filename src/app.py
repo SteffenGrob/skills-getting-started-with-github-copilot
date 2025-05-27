@@ -103,11 +103,11 @@ def signup_for_activity(activity_name: str, email: str):
     email = email.strip().lower()
     if not email:
         raise HTTPException(status_code=400, detail="Email is required")
-    if email in [p.lower() for p in activities.get(activity_name, {}).get("participants", [])]:
-        raise HTTPException(status_code=400, detail="Student already signed up for this activity")
     # Check if the activity exists
     if activity_name not in activities:
         raise HTTPException(status_code=404, detail="Activity not found")
+    if email in [p.lower() for p in activities[activity_name].get("participants", [])]:
+        raise HTTPException(status_code=400, detail="Student already signed up for this activity")
 
     # Get the specificy activity
     activity = activities[activity_name]
