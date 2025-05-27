@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
-        // Teilnehmerliste als HTML generieren
+        // Generate participants list as HTML
         const participantsHTML = `
           <div class="participants-section">
             <h5>Teilnehmer:</h5>
