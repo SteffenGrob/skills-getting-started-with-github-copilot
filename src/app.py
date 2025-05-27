@@ -99,7 +99,7 @@ def signup_for_activity(activity_name: str, email: str):
     # Validate student is not already signed up  
     # Check if the activity exists
     # activity_name = activity_name.title()   
-    activity_name = activity_name.strip().title()
+    activity_name = activity_name.strip().title()   
     email = email.strip().lower()
     if not email:
         raise HTTPException(status_code=400, detail="Email is required")
